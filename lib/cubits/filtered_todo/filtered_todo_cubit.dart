@@ -16,14 +16,17 @@ class FilteredTodoCubit extends Cubit<FilteredTodoState> {
   late StreamSubscription todoSearchSubscription;
   late StreamSubscription todoListSubscription;
 
+  final initialTodos;
+
   final TodoFilterCubit todoFilterCubit;
   final TodoSearchCubit todoSearchCubit;
   final TodoListCubit todoListCubit;
   FilteredTodoCubit({
+    required this.initialTodos,
     required this.todoFilterCubit,
     required this.todoSearchCubit,
     required this.todoListCubit,
-  }) : super(FilteredTodoState.initials()) {
+  }) : super(FilteredTodoState(filteredTodo: initialTodos)) {
     todoFilterSubscription = todoFilterCubit.stream.listen((TodoFilterState todoFilterState) => setFilterTodos());
 
     todoSearchSubscription = todoSearchCubit.stream.listen((TodoSearchState todoSearchState) => setFilterTodos());

@@ -1,24 +1,24 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-part of 'todo_activecount_cubit.dart';
+part of 'active_todo_count_cubit.dart';
 
-class TodoActivecountState extends Equatable {
+class ActiveTodoCountState extends Equatable {
   final int activeCount;
 
-  const TodoActivecountState({
+  const ActiveTodoCountState({
     required this.activeCount,
   });
 
-  factory TodoActivecountState.initial() {
-    return TodoActivecountState(activeCount: 0);
+  factory ActiveTodoCountState.initial() {
+    return ActiveTodoCountState(activeCount: 0);
   }
 
   @override
   String toString() => 'TodoActivecountState(activeCount: $activeCount)';
 
-  TodoActivecountState copyWith({
+  ActiveTodoCountState copyWith({
     int? activeCount,
   }) {
-    return TodoActivecountState(
+    return ActiveTodoCountState(
       activeCount: activeCount ?? this.activeCount,
     );
   }

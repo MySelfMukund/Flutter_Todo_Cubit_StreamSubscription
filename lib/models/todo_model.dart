@@ -10,11 +10,11 @@ enum Filter {
 
 Uuid uuid = Uuid();
 
-class ToDo extends Equatable {
+class Todo extends Equatable {
   final String id;
   final String desc;
   final bool isCompleted;
-  ToDo({
+  Todo({
     String? id,
     required this.desc,
     this.isCompleted = false,
