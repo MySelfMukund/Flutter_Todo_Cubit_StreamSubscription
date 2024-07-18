@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:to_do_cubit_streamsubscription/cubits/filtered_todo/filtered_todo_cubit.dart';
 import 'package:to_do_cubit_streamsubscription/cubits/todo_filter/todo_filter_cubit.dart';
 import 'package:to_do_cubit_streamsubscription/cubits/todo_search/todo_search_cubit.dart';
+import 'package:to_do_cubit_streamsubscription/utils/debounce.dart';
 
 import '../../models/todo_model.dart';
 
 class SearchAndFilterTodo extends StatelessWidget {
-  const SearchAndFilterTodo({super.key});
+  SearchAndFilterTodo({super.key});
+  final debounce = Debounce(miliseconds: 1000);
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +18,11 @@ class SearchAndFilterTodo extends StatelessWidget {
           decoration: const InputDecoration(
               labelText: 'Search Todo...', border: InputBorder.none, filled: true, prefix: Icon(Icons.search)),
           onChanged: (String newSearchString) {
+            // ignore: unnecessary_null_comparison
             if (newSearchString != null) {
-              context.read<TodoSearchCubit>().searchText(newSearchString);
+              debounce.run(() {
+                context.read<TodoSearchCubit>().searchText(newSearchString);
+              });
             }
           },
         ),

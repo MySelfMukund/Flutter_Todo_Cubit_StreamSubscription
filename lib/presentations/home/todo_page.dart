@@ -14,22 +14,22 @@ class TodoPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: Scaffold(
           body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            TodoHeader(),
-            CreateTodo(),
-            SizedBox(
+            const TodoHeader(),
+            const CreateTodo(),
+            const SizedBox(
               height: 20,
             ),
             SearchAndFilterTodo(),
-            ShowTodos(),
+            const ShowTodos(),
           ],
         ),
       )),
