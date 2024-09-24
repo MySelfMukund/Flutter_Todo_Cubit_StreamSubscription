@@ -1,13 +1,13 @@
 # Flutter Todo App (Cubit + StreamSubscription)
 
-A Todo app built using Flutter, implementing the **Bloc Pattern** with **StreamSubscription** for efficient state management and real-time task updates.
+A Todo app built using Flutter, implementing the **Bloc(Cubit) Pattern** with **StreamSubscription** for efficient state management and real-time task updates.
 
 ## Features
 
 - Add, delete, and update tasks.
 - Mark tasks as complete or incomplete.
 - Real-time updates using **StreamSubscription**.
-- Uses **Bloc** for managing state.
+- Uses **Bloc (Cubit)** for managing state.
 - Persistent task storage.
 
 ## Getting Started
@@ -46,7 +46,7 @@ Here's an overview of the project folder structure:
    ├── cubits/             # Contains Cubits and Bloc logic
    ├── models/             # Data models for tasks
    ├── repository/         # Logic for data storage and retrieval
-   ├── screens/            # UI components (screens)
+   ├── presentations/      # UI components (screens)
    ├── widgets/            # Reusable UI components
    └── main.dart           # Main entry point
 ```
